@@ -30,12 +30,9 @@ public class Rollen {
   @Column(nullable = false)
   private String name;
 
-
-  @OneToMany
+  @OneToMany(mappedBy = "rollen")
   @JsonIgnore
   private Set<Benutzer> benutzer;
-
-
 
   public Long getId() {
     return this.id;

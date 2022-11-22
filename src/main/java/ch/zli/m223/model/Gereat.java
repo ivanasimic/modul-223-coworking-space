@@ -30,12 +30,9 @@ public class Gereat {
   @Column(nullable = false)
   private String gereatetyp;
 
-
   @ManyToOne
   @JsonIgnore
   private Benutzer benutzer;
-
-
 
   public Long getId() {
     return this.id;

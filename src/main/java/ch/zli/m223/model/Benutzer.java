@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -41,12 +42,11 @@ public class Benutzer {
   @Column(nullable = false)
   private String email;
 
-
-  @OneToMany
+  @ManyToOne
   @JsonIgnore
-  private Set<Rollen> rollen;
+  private Rollen rollen;
 
-  @OneToMany
+  @OneToMany(mappedBy = "benutzer")
   @JsonIgnore
   private Set<Serienbuchung> serienbuchung;
 
@@ -55,7 +55,7 @@ public class Benutzer {
   @JsonIgnore
   private Set<Buchung> buchung;
 
- @OneToMany
+ @OneToMany(mappedBy = "benutzer")
  @JsonIgnore
  private Set<Gereat> gereat;
 
@@ -100,11 +100,11 @@ public class Benutzer {
     this.email = email;
   }
 
-  public Set<Rollen> getRollen() {
+  public Rollen getRollen() {
     return this.rollen;
   }
 
-  public void setRollen(Set<Rollen> rollen) {
+  public void setRollen(Rollen rollen) {
     this.rollen = rollen;
   }
 
@@ -131,4 +131,5 @@ public class Benutzer {
   public void setGereat(Set<Gereat> gereat) {
     this.gereat = gereat;
   }
+
 }

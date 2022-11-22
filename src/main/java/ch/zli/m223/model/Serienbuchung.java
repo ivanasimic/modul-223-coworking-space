@@ -41,4 +41,46 @@ public class Serienbuchung {
   @JsonIgnore
   private Benutzer benutzer;
   
+
+
+  public Long getId() {
+    return this.id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Long getVon() {
+    return this.von;
+  }
+
+  public void setVon(Long von) {
+    this.von = von;
+  }
+
+  public Long getBis() {
+    return this.bis;
+  }
+
+  public void setBis(Long bis) {
+    this.bis = bis;
+  }
+
+  public Long getZeitinterval() {
+    return this.zeitinterval;
+  }
+
+  public void setZeitinterval(Long zeitinterval) {
+    this.zeitinterval = zeitinterval;
+  }
+
+  public Benutzer getBenutzer() {
+    return this.benutzer;
+  }
+
+  public void setBenutzer(Benutzer benutzer) {
+    this.benutzer = benutzer;
+  }
+
 }
