@@ -10,8 +10,8 @@ VALUES (3, 'Besucher');
 INSERT INTO "Benutzer" (id, vorname, nachname, passwort, email, rollen_id)
 VALUES (4, 'anna', 'meier', 'annameier123', 'annameier@gmail.com', 1);
 
-INSERT INTO "Benutzer" (id, vorname, nachname, passwort, email)
-VALUES (5, 'tim' ,'hauser', 'startuphauser' ,'timhauser@gmail.com');
+INSERT INTO "Benutzer" (id, vorname, nachname, passwort, email, rollen_id)
+VALUES (5, 'tim' ,'hauser', 'startuphauser' ,'timhauser@gmail.com', 2);
 
 INSERT INTO "Benutzer" (id, vorname, nachname, passwort, email)
 VALUES (6, 'hans', 'müller', 'hansmüller987', 'hansmüller@gmail.com');
