@@ -7,8 +7,8 @@ VALUES (2, 'Mitglied');
 INSERT INTO "Rollen" (id, name)
 VALUES (3, 'Besucher');
 
-INSERT INTO "Benutzer" (id, vorname, nachname, passwort, email)
-VALUES (4, 'anna', 'meier', 'annameier123', 'annameier@gmail.com');
+INSERT INTO "Benutzer" (id, vorname, nachname, passwort, email, rollen_id)
+VALUES (4, 'anna', 'meier', 'annameier123', 'annameier@gmail.com', 1);
 
 INSERT INTO "Benutzer" (id, vorname, nachname, passwort, email)
 VALUES (5, 'tim' ,'hauser', 'startuphauser' ,'timhauser@gmail.com');
