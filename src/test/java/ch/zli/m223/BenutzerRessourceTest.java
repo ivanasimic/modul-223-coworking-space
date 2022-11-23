@@ -12,10 +12,19 @@ public class BenutzerRessourceTest {
 
 
   @Test
-    public void testUpdateBenutzer() {
+    public void testUpdate() {
       given()
       .auth().oauth2(admimJwt)
       .when().get("/benutzer/1")
+      .then()
+      .statusCode(401);
+    }
+
+    @Test
+    public void testCreate() {
+      given()
+      .auth().oauth2(admimJwt)
+      .when().get("/benutzer")
       .then()
       .statusCode(401);
     }
