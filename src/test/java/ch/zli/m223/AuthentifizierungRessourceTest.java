@@ -30,4 +30,13 @@ public class AuthentifizierungRessourceTest {
     .then()
     .statusCode(403);
   }
+
+  @Test
+  public void testCreateForMitglied() {
+    given()
+    .auth().oauth2(mitgliedJwt)
+    .when().get("/benutzer/1")
+    .then()
+    .statusCode(403);
+  }
 }
