@@ -23,7 +23,7 @@ public class AuthentifizierungController {
 
 
   
-   //Login 
+   //Anmelden
    @Path("/anmelden")
    @POST
    @PermitAll
@@ -32,7 +32,7 @@ public class AuthentifizierungController {
    public String login(@QueryParam("e-mail")String email, @QueryParam("passwort") String passwort) {
        return authentifizierungService.find(email, passwort);
    }
-   //Register
+   //Registrieren
    @Path("/registrieren")
    @POST
    @PermitAll
@@ -41,6 +41,4 @@ public class AuthentifizierungController {
    public Benutzer create(Benutzer benutzer) {
        return benutzerservice.create(benutzer);
    }
-
-
 }
