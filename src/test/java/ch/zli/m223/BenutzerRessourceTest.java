@@ -29,4 +29,13 @@ public class BenutzerRessourceTest {
       .statusCode(401);
     }
 
+    @Test
+    public void testDelete() {
+      given()
+      .auth().oauth2(admimJwt)
+      .when().get("/benutzer/2")
+      .then()
+      .statusCode(401);
+    }
+
 }

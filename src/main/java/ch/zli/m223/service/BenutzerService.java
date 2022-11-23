@@ -14,7 +14,7 @@ public class BenutzerService {
 EntityManager entitymanager;
 
 public List<Benutzer> findAll() {
-	var query = entitymanager.createQuery("FROM User", Benutzer.class);
+	var query = entitymanager.createQuery("FROM Benutzer", Benutzer.class);
         return query.getResultList();
 }
 
