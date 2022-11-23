@@ -29,18 +29,19 @@ public class Serienbuchung {
 
 
   @Column(nullable = false)
-  private Long von;
+  private String von;
 
   @Column(nullable = false)
-  private Long bis;
+  private String bis;
 
   @Column(nullable = false)
-  private Long zeitinterval;
+  private String zeitinterval;
   
   @ManyToOne
   @JsonIgnore
   private Benutzer benutzer;
   
+
 
 
   public Long getId() {
@@ -51,27 +52,27 @@ public class Serienbuchung {
     this.id = id;
   }
 
-  public Long getVon() {
+  public String getVon() {
     return this.von;
   }
 
-  public void setVon(Long von) {
+  public void setVon(String von) {
     this.von = von;
   }
 
-  public Long getBis() {
+  public String getBis() {
     return this.bis;
   }
 
-  public void setBis(Long bis) {
+  public void setBis(String bis) {
     this.bis = bis;
   }
 
-  public Long getZeitinterval() {
+  public String getZeitinterval() {
     return this.zeitinterval;
   }
 
-  public void setZeitinterval(Long zeitinterval) {
+  public void setZeitinterval(String zeitinterval) {
     this.zeitinterval = zeitinterval;
   }
 
@@ -82,5 +83,5 @@ public class Serienbuchung {
   public void setBenutzer(Benutzer benutzer) {
     this.benutzer = benutzer;
   }
-
+ 
 }

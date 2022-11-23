@@ -26,7 +26,7 @@ public class Buchung {
   private Long id;
 
   @Column(nullable = false)
-  private Long zeit;
+  private String zeit;
   
   @Column(nullable = false)
   private String tag;
@@ -46,11 +46,11 @@ public class Buchung {
     this.id = id;
   }
 
-  public Long getZeit() {
+  public String getZeit() {
     return this.zeit;
   }
 
-  public void setZeit(Long zeit) {
+  public void setZeit(String zeit) {
     this.zeit = zeit;
   }
 
@@ -69,6 +69,7 @@ public class Buchung {
   public void setBenutzer(Benutzer benutzer) {
     this.benutzer = benutzer;
   }
+
 
 
 }
