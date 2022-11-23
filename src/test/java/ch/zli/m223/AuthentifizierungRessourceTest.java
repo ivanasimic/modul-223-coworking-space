@@ -21,4 +21,13 @@ public class AuthentifizierungRessourceTest {
     .then()
     .statusCode(403);
   }
+
+  @Test
+  public void testFind() {
+    given()
+    .auth().oauth2(admimJwt)
+    .when().get("/benutzer/1")
+    .then()
+    .statusCode(403);
+  }
 }
