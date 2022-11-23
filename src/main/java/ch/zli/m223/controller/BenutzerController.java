@@ -2,8 +2,7 @@ package ch.zli.m223.controller;
 
 import java.util.List;
 
-
-
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -32,6 +31,7 @@ public class BenutzerController {
 
 
   @GET
+  @RolesAllowed({"administrator"})
     @Produces(MediaType.APPLICATION_JSON)  
     public List<Benutzer> getUsers() {
         return benutzerservice.findAll();
@@ -39,6 +39,7 @@ public class BenutzerController {
 
     @Path("/{id}")
     @GET
+    @RolesAllowed({"administrator"})
     @Produces(MediaType.APPLICATION_JSON)
     public Benutzer getOneUser(@PathParam("id") Long id) {
         if (id instanceof Long || id >= 1) {
@@ -49,6 +50,7 @@ public class BenutzerController {
     }
 
     @POST
+    @RolesAllowed({"administrator"})
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Benutzer create(Benutzer user) {
@@ -57,6 +59,7 @@ public class BenutzerController {
 
     @Path("/{id}")
     @PUT
+    @RolesAllowed({"administrator"})
     public Benutzer update(@PathParam("id") Long id, Benutzer user){
         if (id instanceof Long || id >= 1) {
             return benutzerservice.update(id, user);
@@ -67,6 +70,7 @@ public class BenutzerController {
 
     @Path("/{id}")
     @DELETE
+    @RolesAllowed({"administrator"})
     public void delete(@PathParam("id") Long id) {
       benutzerservice.delete(id);
     }

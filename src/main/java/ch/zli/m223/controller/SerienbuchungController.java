@@ -3,6 +3,7 @@ package ch.zli.m223.controller;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -24,12 +25,14 @@ public class SerienbuchungController {
   @Inject
   SerienbuchungService serienbuchungService;
   @GET
+  @RolesAllowed({"administrator"})
   @Produces(MediaType.APPLICATION_JSON)
   public List<Serienbuchung> getBuchungen() {
       return serienbuchungService.findAll();
   }
   @Path("/{id}")
   @GET
+  @RolesAllowed({"administrator"})
   @Produces(MediaType.APPLICATION_JSON)
   public Serienbuchung getOneBuchung(@PathParam("id") Long id) {
       if (id >= 1) {
@@ -39,6 +42,7 @@ public class SerienbuchungController {
       }
   }
   @POST
+  @RolesAllowed({"administrator"})
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
   public Serienbuchung create(Serienbuchung serienbuchung) {
@@ -46,6 +50,7 @@ public class SerienbuchungController {
   }
   @Path("/{id}")
   @PUT
+  @RolesAllowed({"administrator"})
   public Serienbuchung update(@PathParam("id") Long id, Serienbuchung serienbuchung) {
       if (id >= 1) {
           return serienbuchungService.update(id, serienbuchung);
@@ -55,6 +60,7 @@ public class SerienbuchungController {
   }
   @Path("/{id}")
   @DELETE
+  @RolesAllowed({"administrator"})
   public void delete(@PathParam("id") Long id) {
     serienbuchungService.delete(id);
   }

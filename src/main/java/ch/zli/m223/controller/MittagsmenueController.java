@@ -3,6 +3,7 @@ package ch.zli.m223.controller;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -20,12 +21,14 @@ public class MittagsmenueController {
   @Inject
   MittagsmenueService mittagsmenueService;
   @GET
+  @RolesAllowed({"mitglied", "administrator"})
   @Produces(MediaType.APPLICATION_JSON)
   public List<Mittagsmenue> getBuchungen() {
       return mittagsmenueService.findAll();
   }
   @Path("/{id}")
   @GET
+  @RolesAllowed({"mitglied", "administrator"})
   @Produces(MediaType.APPLICATION_JSON)
   public Mittagsmenue getOneBuchung(@PathParam("id") Long id) {
       if (id >= 1) {
