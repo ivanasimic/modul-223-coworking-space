@@ -23,4 +23,13 @@ public class MittagsmenueRessourceTest {
     .statusCode(403);
   }
 
+  @Test
+  public void testFindIdForMitglied() {
+    given()
+    .auth().oauth2(mitgliedJwt)
+    .when().get("/benutzer/1")
+    .then()
+    .statusCode(403);
+  }
+
 }
